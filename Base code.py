@@ -1,7 +1,8 @@
 # from Printnamesofmatch import match
-from Createnewaccount import createnewaccount
-from authPassword import checkPassword
-from authEmail import checkEmail
+from functions import createnewaccount
+from functions import checkPassword
+from functions import checkEmail
+from functions import conditionList
 
 print( "Welcome to ......." )
 
@@ -9,7 +10,7 @@ ender = 0
 while ender==0:
 
     print( "Main Menu" )
-    choice = int(input("1.) Log in to Profile\n" "2.)Create New Profile\n" "3.) Exit\n"))
+    choice = int(input("1.) Log in to Profile\n" "2.) Create New Profile\n" "3.) Exit\n"))
 
     if ( choice>3 or choice<1 ):
         print( "Invalid input.Please try again" )
