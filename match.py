@@ -35,6 +35,8 @@ def zipMatch(zipcode, distPref):
 		if distPref == 2:
 			if cells[4][0:3] == str(zipcode)[0:3]:
 				matches.append(cells)
+                if distPref == 3:
+                        matches.append(cells)
 
 	f.close()
 
