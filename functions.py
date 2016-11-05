@@ -39,20 +39,45 @@ def createnewaccount():
             ageMax = int(input("What is your maximum desired age for a partner? "))
             ageMin = int(input("What is your minimum desired age for a partner? "))
             #distPref = 1 if state is desired range and 2 if region is desired range
+            while(ageMax<ageMin):
+                ageMin = int(input("Incorrect value. Please try again: "))
+            while ageMax <= 0:
+                ageMax = int(input("Incorrect value. Please try again: "))
+            while ageMin < 0:
+                ageMin = int(input("Incorrect value. Please try again: "))
+                
             distPref = int(input("What is your desired range for a partner?\n1.)State\n2.)Immediate Region\n"))
-            print( conditionList())
+
+            print("What is your condition/disability?")
+            conLength = len(conditionList())
+            conditions = conditionList()
+            for i in range(1, conLength):
+                print(i,"-", conditions[i])
+            conChoice = int(input())
+            condition = conditions[conChoice]
         
     if (typeChoice == 2):
             accountType = "Educator"
             
-             
-            conLength = len(conditionList())+1
+            print("What is your condition/disability?")
+            conLength = len(conditionList())
             conditions = conditionList()
             for i in range(1, conLength):
-                print(i,".)", conditions[i])
+                print(i,"-", conditions[i])
+            conChoice = int(input())
+            condition = conditions[conChoice]
+                
             
     if (typeChoice == 3):
             accountType = "Learner"
+
+            print("What condition/disability would you like to learn about?")
+            conLength = len(conditionList())
+            conditions = conditionList()
+            for i in range(1, conLength):
+                print(i,"-", conditions[i])
+            conChoice = int(input())
+            condition = conditions[conChoice]
 
     email = input("Please enter your email: ")
 
@@ -69,28 +94,6 @@ def createnewaccount():
 
 
 
-#AUTHENTICATE LOGIN EMAIL
-
-
-def checkLoginEmail(email):
-    
-    #opens file
-    f = open("data.csv","r")
-    if email not in f.read():
-        return False
-
-    count = 0
-    
-    for line in f.read():
-        if email in line:
-            break
-        count = count + 1
-
-
-    return count
-
-    f.close()
-
 
 
 #AUTHENTICATE LOGIN PASSWORD
@@ -105,7 +108,9 @@ def checkLoginPassword(email,password):
             break
         count = count + 1
 
-    if password not in f.read():
+    if password in f.read():
+        print("")
+    else:
         return False
     
     print("Recognizes Password in Database")

@@ -3,7 +3,6 @@ from functions import createnewaccount
 from functions import checkEmail
 from functions import conditionList
 from functions import checkLoginPassword
-from functions import checkLoginEmail
 
 print( "Welcome to ......." )
 
@@ -44,7 +43,7 @@ while ender==0:
     if ( choice == 2 ):
         print( "Creating new profile" )
         #call jonahs function
-        print (createnewaccount())
+        createnewaccount()
         print( "Your new account has been created!" )
         #return to menu
         ender = 0
