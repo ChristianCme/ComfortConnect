@@ -74,24 +74,24 @@ def createnewaccount():
             age = input("Enter Age:")
 
 
-    zipcode = (input("Enter your Zip Code:"))
+    zipcode = (input("Enter your primary Zip Code:"))
 
     while (zipcode.isdigit() == False or len(zipcode) != 5):
             zipcode = input("Please enter a valid zipcode:")
         
 
 
-    typeChoice = int(input("Choose a type for your account: \n1.) Coping \n2.) Educator \n3.) Learner\n"))
+    typeChoice = int(input("Choose a primary type for your account: \n1.) Coping \n2.) Educator \n3.) Learner\n"))
 
     while (typeChoice > 3 or typeChoice < 1):
             typeChoice = int(input("Please enter a valid input: "))
 
 
-
+    
     if (typeChoice == 1):
             accountType = "Coping"
  
-            print("What is your condition/disability?")
+            print("What is your primary condition/disability?")
             conLength = len(conditionList())
             conditions = conditionList()
             for i in range(1, conLength):
@@ -109,7 +109,7 @@ def createnewaccount():
     if (typeChoice == 2):
             accountType = "Educator"
             
-            print("What is your condition/disability?")
+            print("What is your primary condition/disability?")
             conLength = len(conditionList())
             conditions = conditionList()
             for i in range(1, conLength):
@@ -128,7 +128,7 @@ def createnewaccount():
     if (typeChoice == 3):
             accountType = "Learner"
 
-            print("What condition/disability would you like to learn about?")
+            print("What condition/disability are you primarily interested in?")
             conLength = len(conditionList())
             conditions = conditionList()
             for i in range(1, conLength):

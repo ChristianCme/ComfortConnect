@@ -16,7 +16,7 @@ def ageMatch(ageMin, ageMax):
 			matches.append(cells)
 
 	f.close()
-
+        
 	return matches
 
 def zipMatch(zipcode, distPref):
