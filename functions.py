@@ -186,7 +186,7 @@ def createnewaccount():
     f = open("data.csv","a")
     f.write("\n" + email + "," + password + "," + name + "," + age + "," + zipcode + "," + condition + "," + accountType)
 
-createnewaccount()
+
 
 
 
