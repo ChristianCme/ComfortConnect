@@ -1,8 +1,9 @@
 # from Printnamesofmatch import match
 from functions import createnewaccount
-from functions import checkPassword
 from functions import checkEmail
 from functions import conditionList
+from functions import checkLoginPassword
+from functions import checkLoginEmail
 
 print( "Welcome to ......." )
 
@@ -18,13 +19,18 @@ while ender==0:
     if ( choice == 1 ):
         email = input( "Enter email: " )
         
-        #if email does not exist
-        while checkEmail(email)=="False":
+        
+        while (checkEmail(email)==False):
             email = input( "Email does not exist\n" "Please try again: " )
+            
+        
+        
+        
         #if email passes
         password = input( "Enter Password: " )
-        while checkPassword(email, password)=="False":
+        while checkLoginPassword(email, password)==False:
             password = input( "Incorrect password\n" "Try again: " )
+        
             
 
         #if log in works
