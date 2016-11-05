@@ -73,27 +73,27 @@ def conditionList():
     #CREATE NEW ACCOUNT
 
 def createnewaccount():
-    firstName = raw_input("Enter First Name:")
+    firstName = input("Enter First Name:")
     while(firstName.isalpha() == False):
-            firstName = raw_input("Please enter a valid name. No numbers allowed!")
-    lastName = raw_input("Enter Last Name:")
+            firstName = input("Please enter a valid name. No numbers allowed!")
+    lastName = input("Enter Last Name:")
     while(lastName.isalpha() == False):
-            lastName = raw_input("Please enter a valid name. No numbers allowed!")
+            lastName = input("Please enter a valid name. No numbers allowed!")
 
     name = firstName + " " + lastName
 
 
-    age = raw_input("Enter Age:")
+    age = input("Enter Age:")
 
     while (age.isdigit() == False):
             print("Please enter a valid age")
-            age = raw_input("Enter Age:")
+            age = input("Enter Age:")
 
 
-    zipcode = (raw_input("Enter your Zip Code:"))
+    zipcode = (input("Enter your Zip Code:"))
 
     while (zipcode.isdigit() == False or len(zipcode) != 5):
-            zipcode = raw_input("Please enter a valid zipcode:")
+            zipcode = input("Please enter a valid zipcode:")
         
 
 
@@ -123,8 +123,15 @@ def createnewaccount():
             conditions = conditionList()
             for i in range(1, conLength):
                 print(i,"-", conditions[i])
-            conChoice = int(input())
-            condition = conditions[conChoice]
+
+            print("Or Type New Condition/Disability")
+            conChoice = input()
+
+            if conChoice.isdigit == True:
+                conChoice = int(conChoice)
+                condition = conditions[conChoice]
+            else:
+                condition = conChoice
         
     if (typeChoice == 2):
             accountType = "Educator"
@@ -134,8 +141,15 @@ def createnewaccount():
             conditions = conditionList()
             for i in range(1, conLength):
                 print(i,"-", conditions[i])
-            conChoice = int(input())
-            condition = conditions[conChoice]
+                
+            print("Or Type New Condition/Disability")
+            conChoice = input()
+
+            if conChoice.isdigit == True:
+                conChoice = int(conChoice)
+                condition = conditions[conChoice]
+            else:
+                condition = conChoice
                 
             
     if (typeChoice == 3):
@@ -146,21 +160,28 @@ def createnewaccount():
             conditions = conditionList()
             for i in range(1, conLength):
                 print(i,"-", conditions[i])
-            conChoice = int(input())
-            condition = conditions[conChoice]
 
-    email = raw_input("Please enter your email: ")
+            print("Or Type New Condition/Disability")
+            conChoice = input()
+
+            if conChoice.isdigit == True:
+                conChoice = int(conChoice)
+                condition = conditions[conChoice]
+            else:
+                condition = conChoice
+
+    email = input("Please enter your email: ")
 
     #Checks to see if input is both valid and not already taken
     check = 0
     while check == 0:
         if checkEmail(email)==False:
-            email = raw_input( "Invalid email. Please try again: " )
+            email = input( "Invalid email. Please try again: " )
         if checkEmail(email)==3:
-            email = raw_input( "Email already taken. Please try again: ")
+            email = input( "Email already taken. Please try again: ")
         if checkEmail(email)==True:
             check = 1
-    password = raw_input("Enter your password:\n")
+    password = input("Enter your password:")
 
     f = open("data.csv","a")
     f.write("\n" + email + "," + password + "," + name + "," + age + "," + zipcode + "," + condition + "," + accountType)
