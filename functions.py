@@ -45,10 +45,11 @@ def createnewaccount():
     if (typeChoice == 2):
             accountType = "Educator"
             
+             
+            conLength = len(conditionList())+1
             conditions = conditionList()
-            conLength = len(conditions)+1
-            for i in range(0,conLength):
-                print(i".)" conditions[i])
+            for i in range(1, conLength):
+                print(i,".)", conditions[i])
             
     if (typeChoice == 3):
             accountType = "Learner"
