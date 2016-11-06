@@ -1,2 +1,3 @@
-# HealthMeetup
-Project for ArchHacks. Meetup for people who have similar conditions based on location. Using .csv reading and creating our own header files
+# The Comfort Connection
+The Comfort Connection is a profile database that alleviates the feeling of aloneness that often accompanies one’s diagnosis with and treatment for many terminal or otherwise threatening diseases. By pairing afflicted users with others in the same position, The Comfort Connection provides an outlet which understands and has experienced what the user has experienced. Not only that, but it is able to pair Teachers and Educators with those willing to learn about a specific condition. These may be people that have loved ones that are afflicted that want to be able to understand, or even just kind citizens who are curious as to the struggles of others. In either situation, The Comfort Connection proves to be a powerful tool of not only connection but also education. 
+
