@@ -1,5 +1,7 @@
 #AUTHENTICATE LOGIN PASSWORD
 
+global conditionList
+conditionList = ['PTSD', 'Anxiety', 'Alzheimers', 'Eating Disorders', 'Hepatitis', 'Cancer', 'Dementia', 'Schizophrenia', 'Paralysis', 'HIV/AIDS']
     
 def checkLoginPassword(email,password):
 

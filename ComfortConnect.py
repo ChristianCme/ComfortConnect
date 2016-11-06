@@ -4,17 +4,24 @@ from functions import checkEmail
 from functions import checkLoginPassword
 from match import match
 
-print( "Welcome to The Comfort Connection" )
+print( "Welcome to The Comfort Connection\n" )
 
-conditionList = ['PTSD', 'Anxiety', 'Alzhimers', 'Eating Disorders', 'Hepatitis', 'Cancer', 'Dementia', 'Schizophrenia', 'Paralysis', 'HIV/AIDS']
+global conditionList
+conditionList = ['PTSD', 'Anxiety', 'Alzheimers', 'Eating Disorders', 'Hepatitis', 'Cancer', 'Dementia', 'Schizophrenia', 'Paralysis', 'HIV/AIDS']
 
 
 ender = 0
 while ender==0:
 
     print( "Main Menu" )
-    choice = int(input("1.) Log in to Profile\n" "2.) Create New Profile\n" "3.) Exit\n"))
+    choice = input("1.) Log in to Profile\n" "2.) Create New Profile\n" "3.) Exit\n")
+    while (choice.isdigit() == False):
+        print("Invalid input. Please try again")
+        choice = input("1.) Log in to Profile\n" "2.) Create New Profile\n" "3.) Exit\n")
 
+    
+    choice = int(choice)
+    
     if ( choice>3 or choice<1 ):
         print( "Invalid input.Please try again" )
         ender = 0
@@ -33,7 +40,8 @@ while ender==0:
         while checkLoginPassword(email, password)==False:
             password = input( "Incorrect password\n" "Try again: " )
         
-            
+        print("Login Successful\n")
+        print("COMFORT CONNECTION MATCHING PROGRAM\n")
 
         #if log in works
         #call function to check file of group type

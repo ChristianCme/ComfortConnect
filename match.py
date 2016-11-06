@@ -1,5 +1,7 @@
 #series of functions to return matches
 
+global conditionList
+conditionList = ['PTSD', 'Anxiety', 'Alzheimers', 'Eating Disorders', 'Hepatitis', 'Cancer', 'Dementia', 'Schizophrenia', 'Paralysis', 'HIV/AIDS']
 
 
 def ageMatch(ageMin, ageMax):
